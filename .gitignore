@@ -1,3 +1,7 @@
+# custom
+experiments/run_metrics/*
+experiments/run_params/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

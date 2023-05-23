@@ -1,4 +1,5 @@
-from typing import Tuple, Dict, Iterable, List
+from typing import Dict, Iterable, List, Tuple
+
 import torch
 from torch.utils.data import Dataset
 from transformers import AutoTokenizer
@@ -11,7 +12,7 @@ class GoEmotionsDataset(Dataset):
         texts: Iterable[str],
         labels: Iterable[Iterable[int]],
         additional_special_tokens: List[str] = [],
-        padding: str = 'max_length',
+        padding: str = "max_length",
         truncation: bool = True,
         max_length: int = 50,
         return_tensors: str = "pt",
@@ -26,7 +27,9 @@ class GoEmotionsDataset(Dataset):
         self.max_length = max_length
         self.return_tensors = return_tensors
         if len(additional_special_tokens) > 0:
-            self.num_added_tokens = self.tokenizer.add_special_tokens({'additional_special_tokens': self.additional_special_tokens})
+            self.num_added_tokens = self.tokenizer.add_special_tokens(
+                {"additional_special_tokens": self.additional_special_tokens}
+            )
 
     def __len__(self) -> int:
         return len(self.texts)

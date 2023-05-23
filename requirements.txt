@@ -7,3 +7,5 @@ torch==2.0.1
 tqdm==4.65.0
 transformers==4.29.2
 ipykernel==6.23.1
+black==23.3.0
+isort==5.12.0
