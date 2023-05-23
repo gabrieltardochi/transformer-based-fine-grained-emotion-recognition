@@ -1,19 +1,19 @@
-# transformer based fine grained emotion recognition
-Code to apply advanced language transformers fine-tuning methods to recognize emotions using the GoEmotions dataset.
+# Transformer-based Fine-Grained Emotion Recognition
+This repository contains code for applying advanced language transformer fine-tuning methods to recognize emotions using the GoEmotions dataset.
 ## Implemented Functionalities
 - Layer-wise learning rate decay
-- Last *N* layers reinitialization
+- Reinitialization of the last N layers
 - Linear learning rate decay scheduler with initial warmup
 - Last Epoch Frequent Evaluation
-- '[RELIGION]' and '[NAME]' masks as special tokens
-- Storage of experiment metrics and params
-- A preprocessed version of GoEmotions without accents, special characters, emojis and emoticons
-## Development
-First of all, make sure you have Python 3.8 anv VirtualEnv installed in your working environment.
-1. Run `make install` to create a virtualenv with this project dependencies;
-2. Activate the venv with `source .venv/bin/activate`;
-3. Execute the python script `main.py` with the desired parameters and parameter group id;
-4. Once the full optimization loop ends, you will be able to find, based on your experiment `--params-id` and desired `--output-dir`, every single metric and parameter configured for this run.
+- Special tokens '[RELIGION]' and '[NAME]' masks
+- Storage of experiment metrics and parameters
+- Preprocessed version of GoEmotions dataset without accents, special characters, emojis, and emoticons
+## Usage
+Before you begin, ensure that you have Python 3.8 and VirtualEnv installed in your working environment.
+1. Run `make install` to create a virtual environment with the project dependencies.
+2. Activate the virtual environment using `source .venv/bin/activate`.
+3. Execute the `main.py` script with the desired parameters and parameter group ID.
+4. Once the optimization loop is complete, you can find all the experiment metrics and parameters for this run based on the `--params-id` and desired `--output-dir` configuration.
 ### Training Args
 The following table lists the command-line arguments that can be used with `main.py`:
 | Argument                 | Type       | Default            | Description                                                                                               |
